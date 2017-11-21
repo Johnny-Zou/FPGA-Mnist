@@ -1,0 +1,209 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Johnny Zou/Desktop/2nd Year/Verilog/Final Project
+vcontrol
+Z1 !s110 1511228645
+!i10b 1
+!s100 HD6SEFEFzO<>Db]6G]V>E1
+IfZfdO2923O]>dLfS@DbAf0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1511221754
+Z4 8finalProject.v
+Z5 FfinalProject.v
+L0 184
+Z6 OV;L;10.4d;61
+r1
+!s85 0
+31
+Z7 !s108 1511228645.000000
+Z8 !s107 finalProject.v|
+Z9 !s90 -reportprogress|300|finalProject.v|
+!i113 1
+vdataPath
+R1
+!i10b 1
+!s100 Qo_7idgIKUlTXR?ASdoEH2
+IMdT2CcDPA8`RTb<^0@Z?90
+R2
+R0
+R3
+R4
+R5
+L0 310
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+ndata@path
+vfinalProject
+R1
+!i10b 1
+!s100 8<iL^NabH7hMOJWzG1DUg2
+InN5V0L67Vl]5n20ZZoCjS3
+R2
+R0
+R3
+R4
+R5
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+nfinal@project
+vimgRAM_readOnly
+R1
+!i10b 1
+!s100 aQ4bllQjaER<Za_[TA4<j1
+IdSl[FGCRGa51l_no^SD^J1
+R2
+R0
+R3
+R4
+R5
+L0 680
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+nimg@r@a@m_read@only
+vresultRAM_layer1
+R1
+!i10b 1
+!s100 Tf`_JUJTMkYV8k4AfJW=L0
+IZAknRg;[o2=?z8FhmXFAK1
+R2
+R0
+R3
+R4
+R5
+L0 737
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+nresult@r@a@m_layer1
+vresultRAM_layer2
+R1
+!i10b 1
+!s100 VzgTAAM`::5f9nhP]8S320
+IjUnTL:Hi@RNZ[aKk0kQh]1
+R2
+R0
+R3
+R4
+R5
+L0 788
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+nresult@r@a@m_layer2
+vresultRAM_outputLayer
+R1
+!i10b 1
+!s100 <dZKPf=j@345e13FXTN0D3
+IbXTSfWP:ePW8Te>L<dL2B1
+R2
+R0
+R3
+R4
+R5
+L0 837
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+nresult@r@a@m_output@layer
+vweightRAM_layer1
+R1
+!i10b 1
+!s100 N3G?5560h[0l7G37kFN6l2
+IaGm3d8ohX^c@iKjh1M:QI3
+R2
+R0
+R3
+R4
+R5
+L0 707
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+nweight@r@a@m_layer1
+vweightRAM_layer2
+R1
+!i10b 1
+!s100 PPmC_Zfhk37oG^dX]OHe80
+ILoJ;?]kA6Fch3UTE:a3PK3
+R2
+R0
+R3
+R4
+R5
+L0 760
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+nweight@r@a@m_layer2
+vweightRAM_outputLayer
+R1
+!i10b 1
+!s100 d?[NNRFK8nemTjmTHO6dm3
+I5hn8=WoHB617ggFUzlE;71
+R2
+R0
+R3
+R4
+R5
+L0 811
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+nweight@r@a@m_output@layer

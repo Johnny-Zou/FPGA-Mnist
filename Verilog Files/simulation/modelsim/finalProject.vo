@@ -1,0 +1,451 @@
+// Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, the Altera Quartus Prime License Agreement,
+// the Altera MegaCore Function License Agreement, or other 
+// applicable license agreement, including, without limitation, 
+// that your use is for the sole purpose of programming logic 
+// devices manufactured by Altera and sold by Altera or its 
+// authorized distributors.  Please refer to the applicable 
+// agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition"
+
+// DATE "11/11/2017 20:47:58"
+
+// 
+// Device: Altera 5CSEMA5F31C6 Package FBGA896
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module finalProject (
+	SW,
+	CLOCK_50,
+	LEDR);
+input 	[9:0] SW;
+input 	CLOCK_50;
+output 	[7:0] LEDR;
+
+// Design Ports Information
+// LEDR[0]	=>  Location: PIN_V16,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LEDR[1]	=>  Location: PIN_W16,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LEDR[2]	=>  Location: PIN_V17,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LEDR[3]	=>  Location: PIN_V18,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LEDR[4]	=>  Location: PIN_W17,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LEDR[5]	=>  Location: PIN_W19,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LEDR[6]	=>  Location: PIN_Y19,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LEDR[7]	=>  Location: PIN_W20,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// CLOCK_50	=>  Location: PIN_AF14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[0]	=>  Location: PIN_AB12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[1]	=>  Location: PIN_AC12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[2]	=>  Location: PIN_AF9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[3]	=>  Location: PIN_AF10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[4]	=>  Location: PIN_AD11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[5]	=>  Location: PIN_AD12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[6]	=>  Location: PIN_AE11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[7]	=>  Location: PIN_AC9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[8]	=>  Location: PIN_AD10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[9]	=>  Location: PIN_AE12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \~QUARTUS_CREATED_GND~I_combout ;
+wire \CLOCK_50~input_o ;
+wire \CLOCK_50~inputCLKENA0_outclk ;
+wire \SW[0]~input_o ;
+wire \SW[1]~input_o ;
+wire \SW[2]~input_o ;
+wire \SW[3]~input_o ;
+wire \SW[4]~input_o ;
+wire \SW[5]~input_o ;
+wire \SW[6]~input_o ;
+wire \SW[7]~input_o ;
+wire \SW[8]~input_o ;
+wire \SW[9]~input_o ;
+wire \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0~portadataout ;
+wire \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a1 ;
+wire \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a2 ;
+wire \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a3 ;
+wire \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a4 ;
+wire \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a5 ;
+wire \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a6 ;
+wire \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a7 ;
+
+wire [9:0] \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0_PORTADATAOUT_bus ;
+
+assign \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0~portadataout  = \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0_PORTADATAOUT_bus [0];
+assign \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a1  = \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0_PORTADATAOUT_bus [1];
+assign \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a2  = \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0_PORTADATAOUT_bus [2];
+assign \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a3  = \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0_PORTADATAOUT_bus [3];
+assign \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a4  = \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0_PORTADATAOUT_bus [4];
+assign \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a5  = \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0_PORTADATAOUT_bus [5];
+assign \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a6  = \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0_PORTADATAOUT_bus [6];
+assign \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a7  = \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0_PORTADATAOUT_bus [7];
+
+// Location: IOOBUF_X52_Y0_N2
+cyclonev_io_obuf \LEDR[0]~output (
+	.i(\imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0~portadataout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(LEDR[0]),
+	.obar());
+// synopsys translate_off
+defparam \LEDR[0]~output .bus_hold = "false";
+defparam \LEDR[0]~output .open_drain_output = "false";
+defparam \LEDR[0]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X52_Y0_N19
+cyclonev_io_obuf \LEDR[1]~output (
+	.i(\imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a1 ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(LEDR[1]),
+	.obar());
+// synopsys translate_off
+defparam \LEDR[1]~output .bus_hold = "false";
+defparam \LEDR[1]~output .open_drain_output = "false";
+defparam \LEDR[1]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X60_Y0_N2
+cyclonev_io_obuf \LEDR[2]~output (
+	.i(\imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a2 ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(LEDR[2]),
+	.obar());
+// synopsys translate_off
+defparam \LEDR[2]~output .bus_hold = "false";
+defparam \LEDR[2]~output .open_drain_output = "false";
+defparam \LEDR[2]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X80_Y0_N2
+cyclonev_io_obuf \LEDR[3]~output (
+	.i(\imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a3 ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(LEDR[3]),
+	.obar());
+// synopsys translate_off
+defparam \LEDR[3]~output .bus_hold = "false";
+defparam \LEDR[3]~output .open_drain_output = "false";
+defparam \LEDR[3]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X60_Y0_N19
+cyclonev_io_obuf \LEDR[4]~output (
+	.i(\imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a4 ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(LEDR[4]),
+	.obar());
+// synopsys translate_off
+defparam \LEDR[4]~output .bus_hold = "false";
+defparam \LEDR[4]~output .open_drain_output = "false";
+defparam \LEDR[4]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X80_Y0_N19
+cyclonev_io_obuf \LEDR[5]~output (
+	.i(\imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a5 ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(LEDR[5]),
+	.obar());
+// synopsys translate_off
+defparam \LEDR[5]~output .bus_hold = "false";
+defparam \LEDR[5]~output .open_drain_output = "false";
+defparam \LEDR[5]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X84_Y0_N2
+cyclonev_io_obuf \LEDR[6]~output (
+	.i(\imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a6 ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(LEDR[6]),
+	.obar());
+// synopsys translate_off
+defparam \LEDR[6]~output .bus_hold = "false";
+defparam \LEDR[6]~output .open_drain_output = "false";
+defparam \LEDR[6]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y6_N5
+cyclonev_io_obuf \LEDR[7]~output (
+	.i(\imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a7 ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(LEDR[7]),
+	.obar());
+// synopsys translate_off
+defparam \LEDR[7]~output .bus_hold = "false";
+defparam \LEDR[7]~output .open_drain_output = "false";
+defparam \LEDR[7]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X32_Y0_N1
+cyclonev_io_ibuf \CLOCK_50~input (
+	.i(CLOCK_50),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\CLOCK_50~input_o ));
+// synopsys translate_off
+defparam \CLOCK_50~input .bus_hold = "false";
+defparam \CLOCK_50~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: CLKCTRL_G6
+cyclonev_clkena \CLOCK_50~inputCLKENA0 (
+	.inclk(\CLOCK_50~input_o ),
+	.ena(vcc),
+	.outclk(\CLOCK_50~inputCLKENA0_outclk ),
+	.enaout());
+// synopsys translate_off
+defparam \CLOCK_50~inputCLKENA0 .clock_type = "global clock";
+defparam \CLOCK_50~inputCLKENA0 .disable_mode = "low";
+defparam \CLOCK_50~inputCLKENA0 .ena_register_mode = "always enabled";
+defparam \CLOCK_50~inputCLKENA0 .ena_register_power_up = "high";
+defparam \CLOCK_50~inputCLKENA0 .test_syn = "high";
+// synopsys translate_on
+
+// Location: IOIBUF_X12_Y0_N18
+cyclonev_io_ibuf \SW[0]~input (
+	.i(SW[0]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\SW[0]~input_o ));
+// synopsys translate_off
+defparam \SW[0]~input .bus_hold = "false";
+defparam \SW[0]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X16_Y0_N1
+cyclonev_io_ibuf \SW[1]~input (
+	.i(SW[1]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\SW[1]~input_o ));
+// synopsys translate_off
+defparam \SW[1]~input .bus_hold = "false";
+defparam \SW[1]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X8_Y0_N35
+cyclonev_io_ibuf \SW[2]~input (
+	.i(SW[2]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\SW[2]~input_o ));
+// synopsys translate_off
+defparam \SW[2]~input .bus_hold = "false";
+defparam \SW[2]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X4_Y0_N52
+cyclonev_io_ibuf \SW[3]~input (
+	.i(SW[3]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\SW[3]~input_o ));
+// synopsys translate_off
+defparam \SW[3]~input .bus_hold = "false";
+defparam \SW[3]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X2_Y0_N41
+cyclonev_io_ibuf \SW[4]~input (
+	.i(SW[4]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\SW[4]~input_o ));
+// synopsys translate_off
+defparam \SW[4]~input .bus_hold = "false";
+defparam \SW[4]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X16_Y0_N18
+cyclonev_io_ibuf \SW[5]~input (
+	.i(SW[5]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\SW[5]~input_o ));
+// synopsys translate_off
+defparam \SW[5]~input .bus_hold = "false";
+defparam \SW[5]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X4_Y0_N35
+cyclonev_io_ibuf \SW[6]~input (
+	.i(SW[6]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\SW[6]~input_o ));
+// synopsys translate_off
+defparam \SW[6]~input .bus_hold = "false";
+defparam \SW[6]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X4_Y0_N1
+cyclonev_io_ibuf \SW[7]~input (
+	.i(SW[7]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\SW[7]~input_o ));
+// synopsys translate_off
+defparam \SW[7]~input .bus_hold = "false";
+defparam \SW[7]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X4_Y0_N18
+cyclonev_io_ibuf \SW[8]~input (
+	.i(SW[8]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\SW[8]~input_o ));
+// synopsys translate_off
+defparam \SW[8]~input .bus_hold = "false";
+defparam \SW[8]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X2_Y0_N58
+cyclonev_io_ibuf \SW[9]~input (
+	.i(SW[9]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\SW[9]~input_o ));
+// synopsys translate_off
+defparam \SW[9]~input .bus_hold = "false";
+defparam \SW[9]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: M10K_X14_Y2_N0
+cyclonev_ram_block \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0 (
+	.portawe(vcc),
+	.portare(vcc),
+	.portaaddrstall(gnd),
+	.portbwe(gnd),
+	.portbre(vcc),
+	.portbaddrstall(gnd),
+	.clk0(\CLOCK_50~inputCLKENA0_outclk ),
+	.clk1(gnd),
+	.ena0(vcc),
+	.ena1(vcc),
+	.ena2(vcc),
+	.ena3(vcc),
+	.clr0(gnd),
+	.clr1(gnd),
+	.nerror(vcc),
+	.portadatain(10'b0000000000),
+	.portaaddr({\SW[9]~input_o ,\SW[8]~input_o ,\SW[7]~input_o ,\SW[6]~input_o ,\SW[5]~input_o ,\SW[4]~input_o ,\SW[3]~input_o ,\SW[2]~input_o ,\SW[1]~input_o ,\SW[0]~input_o }),
+	.portabyteenamasks(1'b1),
+	.portbdatain(10'b0000000000),
+	.portbaddr(10'b0000000000),
+	.portbbyteenamasks(1'b1),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.portadataout(\imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0_PORTADATAOUT_bus ),
+	.portbdataout(),
+	.eccstatus(),
+	.dftout());
+// synopsys translate_off
+defparam \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0 .data_interleave_offset_in_bits = 1;
+defparam \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0 .data_interleave_width_in_bits = 1;
+defparam \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0 .init_file = "image.mif";
+defparam \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0 .init_file_layout = "port_a";
+defparam \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0 .logical_ram_name = "imgRAM_readOnly:imgRam|altsyncram:IMG_ram_rtl_0|altsyncram_nha1:auto_generated|ALTSYNCRAM";
+defparam \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0 .operation_mode = "rom";
+defparam \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0 .port_a_address_clear = "none";
+defparam \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0 .port_a_address_width = 10;
+defparam \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0 .port_a_byte_enable_clock = "none";
+defparam \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0 .port_a_data_out_clear = "none";
+defparam \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0 .port_a_data_out_clock = "none";
+defparam \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0 .port_a_data_width = 10;
+defparam \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0 .port_a_first_address = 0;
+defparam \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0 .port_a_first_bit_number = 0;
+defparam \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0 .port_a_last_address = 1023;
+defparam \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0 .port_a_logical_ram_depth = 1025;
+defparam \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0 .port_a_logical_ram_width = 8;
+defparam \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0 .port_a_read_during_write_mode = "new_data_no_nbe_read";
+defparam \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0 .port_a_write_enable_clock = "none";
+defparam \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0 .port_b_address_width = 10;
+defparam \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0 .port_b_data_width = 10;
+defparam \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0 .ram_block_type = "M20K";
+defparam \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0 .mem_init4 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
+defparam \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0 .mem_init3 = "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002407000000000402C1300000000040000001417000000000000000000000000000000000010040B000030000002C090180401C0700000000000000000000000000000000000000040000C0000E0201000005000000000B03C04000000000000000000000000000000020060000C07C6625CC43CCFF3A08408000000040000000000000190040103000038000200004C7F398FF3E0F73FCD32E0430000B0280000000000000180002C07020250040503852308FF3FCF63D8EC294100001105004000090000";
+defparam \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0 .mem_init2 = "00000000816014000000004447300F73FCF53F8CB1440006800020000000B0200E0000000000008000080A02841340FF3FCEE3F4E21A00A01412020000540A000090000000000000000740001400308FF3B8F63C8F3240190100F008000240000006024070000000000000000001402400394F43B8CD20C270000B008000300A0000D054010000803808000000000006C000044E3B0F73FC00004090180D048000000B03403000000280000000000000000000008000062DCFB3FC5D03400000000000A02800000080000000C000040700000000000140002000040943D8FA2E43002C0800007010020000000000000000040100000000000000500403008151";
+defparam \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0 .mem_init1 = "98FF3DCFF0CC000140F0000500000000000000000401000000000002C00000110000001C6B290E13F03406C000040100401000000000000401000000000002C00000050201E00000000303FCBB0001000017008020040000000000010000000000000110000003006000170001C2D8FF234100240000C030080000000000010000000000000040280001000094000100B160E62780006406014040080100000000010000000000044000400D00001264210000032CFF3FC672644C0140400C01000000000000000000000340002C00008003FCF42E8D53B4FF39CF63FCD40180500C0200400000000000000000024330BC48148623FCFA3D0FF3FCFD3ECFE3E0";
+defparam \imgRam|IMG_ram_rtl_0|auto_generated|ram_block1a0 .mem_init0 = "EA0A80F00000018030000000000000000C8B73CCFF2ACD03E0FF3FCFF388B22105E0E41D0440100000010000000400000000001C8FF3FC94028B428C6E030130480A0180801000000000000400C0000007000000000003C00004150001B0000A004060140000004010000000000C070100000006000000000005C0000001014030000000002004000000401805010020040401001004030000000000000010001703C050000800000000000000401C0800800000000080400C02000000000001C0B0040000002000030200600C01000000000000000000000080400C000000000000000000600003C0500001000000000000802010070000301C0600C0200000";
+// synopsys translate_on
+
+// Location: LABCELL_X46_Y46_N0
+cyclonev_lcell_comb \~QUARTUS_CREATED_GND~I (
+// Equation(s):
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\~QUARTUS_CREATED_GND~I_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \~QUARTUS_CREATED_GND~I .extended_lut = "off";
+defparam \~QUARTUS_CREATED_GND~I .lut_mask = 64'h0000000000000000;
+defparam \~QUARTUS_CREATED_GND~I .shared_arith = "off";
+// synopsys translate_on
+
+endmodule
