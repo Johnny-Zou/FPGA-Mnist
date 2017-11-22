@@ -1,0 +1,54 @@
+--altpll CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" clk0_divide_by=2 clk0_duty_cycle=50 clk0_multiply_by=1 clk0_phase_shift="0" compensate_clock="CLK0" device_family="Cyclone V" inclk0_input_frequency=20000 intended_device_family="Cyclone II" operation_mode="normal" pll_type="FAST" clk inclk CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48
+--VERSION_BEGIN 16.0 cbx_altclkbuf 2016:04:27:18:05:34:SJ cbx_altiobuf_bidir 2016:04:27:18:05:34:SJ cbx_altiobuf_in 2016:04:27:18:05:34:SJ cbx_altiobuf_out 2016:04:27:18:05:34:SJ cbx_altpll 2016:04:27:18:05:34:SJ cbx_cycloneii 2016:04:27:18:05:34:SJ cbx_lpm_add_sub 2016:04:27:18:05:34:SJ cbx_lpm_compare 2016:04:27:18:05:34:SJ cbx_lpm_counter 2016:04:27:18:05:34:SJ cbx_lpm_decode 2016:04:27:18:05:34:SJ cbx_lpm_mux 2016:04:27:18:05:34:SJ cbx_mgl 2016:04:27:18:06:48:SJ cbx_nadder 2016:04:27:18:05:34:SJ cbx_stratix 2016:04:27:18:05:34:SJ cbx_stratixii 2016:04:27:18:05:34:SJ cbx_stratixiii 2016:04:27:18:05:34:SJ cbx_stratixv 2016:04:27:18:05:34:SJ cbx_util_mgl 2016:04:27:18:05:34:SJ  VERSION_END
+
+
+-- Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, the Altera Quartus Prime License Agreement,
+--  the Altera MegaCore Function License Agreement, or other 
+--  applicable license agreement, including, without limitation, 
+--  that your use is for the sole purpose of programming logic 
+--  devices manufactured by Altera and sold by Altera or its 
+--  authorized distributors.  Please refer to the applicable 
+--  agreement for further details.
+
+
+FUNCTION generic_pll (fbclk, refclk, rst)
+WITH ( duty_cycle, output_clock_frequency, phase_shift, reference_clock_frequency)
+RETURNS ( fboutclk, locked, outclk);
+
+--synthesis_resources = generic_pll 1 
+SUBDESIGN altpll_80u
+( 
+	clk[5..0]	:	output;
+	fbout	:	output;
+	inclk[1..0]	:	input;
+	locked	:	output;
+) 
+VARIABLE 
+	generic_pll1 : generic_pll
+		WITH (
+			duty_cycle = 50,
+			output_clock_frequency = "40000 ps",
+			phase_shift = "0 ps",
+			reference_clock_frequency = "20000 ps"
+		);
+	areset	: NODE;
+	fb_clkin	: WIRE;
+
+BEGIN 
+	generic_pll1.fbclk = fb_clkin;
+	generic_pll1.refclk = inclk[0..0];
+	generic_pll1.rst = areset;
+	areset = GND;
+	clk[] = ( B"0", B"0", B"0", B"0", B"0", generic_pll1.outclk);
+	fb_clkin = generic_pll1.fboutclk;
+	fbout = fb_clkin;
+	locked = generic_pll1.locked;
+END;
+--VALID FILE

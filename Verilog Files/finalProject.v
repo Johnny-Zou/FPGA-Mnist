@@ -1,4 +1,17 @@
-module finalProject(KEY,CLOCK_50,LEDR);
+module finalProject(
+	KEY,
+	CLOCK_50,
+	LEDR,
+	// The ports below are for the VGA output.  Do not change.
+	VGA_CLK,   						//	VGA Clock
+	VGA_HS,							//	VGA H_SYNC
+	VGA_VS,							//	VGA V_SYNC
+	VGA_BLANK_N,						//	VGA BLANK
+	VGA_SYNC_N,						//	VGA SYNC
+	VGA_R,   						//	VGA Red[9:0]
+	VGA_G,	 						//	VGA Green[9:0]
+	VGA_B   						//	VGA Blue[9:0]
+	);
 	input CLOCK_50;
 	input [1:0] KEY;
 		//key 0 is reset
@@ -8,6 +21,17 @@ module finalProject(KEY,CLOCK_50,LEDR);
 	output [9:0] LEDR;
 		// ouput whatever number it is
 
+	//vga outputs
+	// Do not change the following outputs
+	output			VGA_CLK;   				//	VGA Clock
+	output			VGA_HS;					//	VGA H_SYNC
+	output			VGA_VS;					//	VGA V_SYNC
+	output			VGA_BLANK_N;				//	VGA BLANK
+	output			VGA_SYNC_N;				//	VGA SYNC
+	output	[9:0]	VGA_R;   				//	VGA Red[9:0]
+	output	[9:0]	VGA_G;	 				//	VGA Green[9:0]
+	output	[9:0]	VGA_B;   				//	VGA Blue[9:0]
+
 	assign resetn = KEY[0];
 	assign go = ~KEY[1];
 
@@ -15,11 +39,14 @@ module finalProject(KEY,CLOCK_50,LEDR);
 	wire done_Second;
 	wire done_Output;
 	wire done_Selecting;
+	wire done_Drawing;
 
 	//enable signals
 	wire load_firstLayer, load_secondLayer, load_outputLayer, load_result;
 
 	wire load_resetFirstLayer, load_resetSecondLayer, load_resetOutputLayer;
+
+	wire load_drawing;
 
 
 	//addresses
@@ -50,6 +77,11 @@ module finalProject(KEY,CLOCK_50,LEDR);
 
 	wire [9:0] resultingNumber;
 
+	wire [23:0] drawingColor;
+	wire drawPulse;
+	wire [7:0] position_x;
+	wire [6:0] position_y;
+
 	control C0(
 		//inputs
 
@@ -61,6 +93,7 @@ module finalProject(KEY,CLOCK_50,LEDR);
 		.done_Second(done_Second),
 		.done_Output(done_Output),
 		.done_Selecting(done_Selecting),
+		.done_Drawing(done_Drawing),
 
 		//outputs
 		.load_firstLayer(load_firstLayer),
@@ -70,7 +103,8 @@ module finalProject(KEY,CLOCK_50,LEDR);
 
 		.load_resetFirstLayer(load_resetFirstLayer),
 		.load_resetSecondLayer(load_resetSecondLayer),
-		.load_resetOutputLayer(load_resetOutputLayer)
+		.load_resetOutputLayer(load_resetOutputLayer),
+		.load_drawing(load_drawing)
 	);//-------
 
 	dataPath D0(
@@ -82,15 +116,19 @@ module finalProject(KEY,CLOCK_50,LEDR);
 		.done_Second(done_Second),
 		.done_Output(done_Output),
 		.done_Selecting(done_Selecting),
+		.done_Drawing(done_Drawing),
 
 		.load_firstLayer(load_firstLayer),
 		.load_secondLayer(load_secondLayer),
 		.load_outputLayer(load_outputLayer),
 		.load_result(load_result),
 
+
 		.load_resetFirstLayer(load_resetFirstLayer),
 		.load_resetSecondLayer(load_resetSecondLayer),
 		.load_resetOutputLayer(load_resetOutputLayer),
+
+		.load_drawing(load_drawing),
 
 		.imageRAM_address(imageRAM_address),
 		.layer1_weight_address(layer1_weight_address),
@@ -113,9 +151,37 @@ module finalProject(KEY,CLOCK_50,LEDR);
 		.resultRAM_2_output(resultRAM_2_output),
 		.resultRAM_OUTPUT_input(resultRAM_OUTPUT_input),
 		.resultRAM_OUTPUT_output(resultRAM_OUTPUT_output),
-		.resultingNumber(resultingNumber)
+		.resultingNumber(resultingNumber),
 
+		.drawPulse(drawPulse),
+		.drawingColor(drawingColor),
+		.position_x(position_x),
+		.position_y(position_y)
 	);
+
+	// Create an Instance of a VGA controller - there can be only one!
+	// Define the number of colours as well as the initial background
+	// image file (.MIF) for the controller.
+	vga_adapter VGA(
+			.resetn(resetn),
+			.clock(CLOCK_50),
+			.colour(drawingColor),
+			.x(position_x),
+			.y(position_y),
+			.plot(drawPulse),
+			/* Signals for the DAC to drive the monitor. */
+			.VGA_R(VGA_R),
+			.VGA_G(VGA_G),
+			.VGA_B(VGA_B),
+			.VGA_HS(VGA_HS),
+			.VGA_VS(VGA_VS),
+			.VGA_BLANK(VGA_BLANK_N),
+			.VGA_SYNC(VGA_SYNC_N),
+			.VGA_CLK(VGA_CLK));
+		defparam VGA.RESOLUTION = "160x120";
+		defparam VGA.MONOCHROME = "FALSE";
+		defparam VGA.BITS_PER_COLOUR_CHANNEL = 8;
+		defparam VGA.BACKGROUND_IMAGE = "black.mif";
 
 	//instantiate RAM modules
 	imgRAM_readOnly imgRAM(
@@ -190,6 +256,7 @@ module control(
 	done_Second,
 	done_Output,
 	done_Selecting,
+	done_Drawing,
 
 	load_firstLayer,
 	load_secondLayer,
@@ -198,7 +265,8 @@ module control(
 
 	load_resetFirstLayer,
 	load_resetSecondLayer,
-	load_resetOutputLayer
+	load_resetOutputLayer,
+	load_drawing
 	);
 
 	input clk;
@@ -210,6 +278,7 @@ module control(
 	input done_Second;
 	input done_Output;
 	input done_Selecting;
+	input done_Drawing;
 
 	//outputs here
 	output reg load_firstLayer;
@@ -220,6 +289,7 @@ module control(
 	output reg load_resetFirstLayer;
 	output reg load_resetSecondLayer;
 	output reg load_resetOutputLayer;
+	output reg load_drawing;
 
 	//states
 	reg [3:0] current_state, next_state;
@@ -233,7 +303,8 @@ module control(
 						load_resetSecond 				= 4'd5,
 						load_outputRAM					= 4'd6,
 						load_resetOutput 				= 4'd7,
-						display_mostLikely				= 4'd8;
+						display_mostLikely				= 4'd8,
+						draw_image						= 4'd9;
 
 	always@(*)
 	begin: state_table
@@ -250,7 +321,9 @@ module control(
 			load_outputRAM: next_state = done_Output ? load_resetOutput : load_outputRAM;
 			load_resetOutput: next_state = display_mostLikely;
 
-			display_mostLikely: next_state = done_Selecting ? S_begin : display_mostLikely;
+			display_mostLikely: next_state = done_Selecting ? draw_image : display_mostLikely;
+			draw_image: next_state = done_Drawing ? S_begin : draw_image;
+
 			default: next_state = S_begin;
 		endcase
 	end
@@ -267,6 +340,8 @@ module control(
 		load_resetOutputLayer = 1'b0;
 
         load_result = 1'b0;
+        load_drawing = 1'b0;
+
         case(current_state)
 			S_begin: begin //nothing happens here, just wait for the singal to begin the calculations
 				
@@ -292,6 +367,9 @@ module control(
 			display_mostLikely: begin
 				load_result = 1'b1;
 			end
+			draw_image: begin
+				load_drawing = 1'b1;
+			end
 		endcase
 	end // send the enable signals
 
@@ -314,6 +392,7 @@ module dataPath(
 	done_Second,
 	done_Output,
 	done_Selecting,
+	done_Drawing,
 
 	load_firstLayer,
 	load_secondLayer,
@@ -323,6 +402,7 @@ module dataPath(
 	load_resetFirstLayer,
 	load_resetSecondLayer,
 	load_resetOutputLayer,
+	load_drawing,
 
 	imageRAM_address,
 	layer1_weight_address,
@@ -349,13 +429,20 @@ module dataPath(
 	resultRAM_2_input,
 	resultRAM_OUTPUT_input,
 
-	resultingNumber
+	resultingNumber,
+
+
+	drawPulse,
+	drawingColor,
+	position_x,
+	position_y
 
 	);
 	input clk,resetn;
 	
 	input load_firstLayer,load_secondLayer,load_outputLayer,load_result;
 	input load_resetFirstLayer, load_resetSecondLayer, load_resetOutputLayer;
+	input load_drawing;
 
 	//output addresses
 	output reg [9:0] imageRAM_address;
@@ -378,7 +465,7 @@ module dataPath(
 	input signed [14:-17] resultRAM_2_output;
 	input signed [14:-17] resultRAM_OUTPUT_output;
 
-	//ouput data
+	//output data
 	output [14:-17] resultRAM_1_input; //input into the result layer 1
 	output [14:-17] resultRAM_2_input;
 	output [14:-17] resultRAM_OUTPUT_input;
@@ -392,6 +479,7 @@ module dataPath(
 	output reg done_Second;
 	output reg done_Output;
 	output reg done_Selecting;
+	output reg done_Drawing;
 
 	reg signed [29:-34] tempResultRAM_1;
 	reg signed [29:-34] tempResultRAM_2;
@@ -402,11 +490,20 @@ module dataPath(
 	assign resultRAM_OUTPUT_input = tempResultRAM_Output[14:-17];
 
 
-	reg completeCalculation, maxCalculation, increment, increment_address, maxCalculation_wait;
+	reg completeCalculation, maxCalculation, increment, increment_address, maxCalculation_wait,clockCycleReset, doneResettingForDrawing,donePositionSet,firstPixel;
 
 	//max
 	reg signed [14:-17] currentMaxVal = 32'b10000000000000000000000000000000;
 	reg [3:0] maxAddress = 4'b0;
+
+	//drawing stuff
+	output reg drawPulse;
+	output reg [7:0] position_x;
+	output reg [6:0] position_y;
+
+	output [23:0] drawingColor;
+	assign drawingColor = {imgRAMdata[-1:-8],imgRAMdata[-1:-8],imgRAMdata[-1:-8]};
+
 
 	always@(posedge clk)
 	begin: addressCounter
@@ -419,6 +516,7 @@ module dataPath(
 			done_Second <= 0;
 			done_Output <= 0;
 			done_Selecting <= 0;
+			done_Drawing <= 0;
 
 			layer2_weight_address <= 0;
 			layer2_result_address <= 0;
@@ -426,9 +524,22 @@ module dataPath(
 			layerOutput_weight_address <= 0;
 			layerOutput_result_address <= 0;
 
-			tempResultRAM_1 = 64'd0;
-			tempResultRAM_2 = 64'd0;
-			tempResultRAM_Output = 64'd0;
+			tempResultRAM_1 <= 64'd0;
+			tempResultRAM_2 <= 64'd0;
+			tempResultRAM_Output <= 64'd0;
+
+			completeCalculation <= 1'b0;
+			maxCalculation <= 1'b0;
+			increment <= 1'b0;
+			increment_address <= 1'b0;
+			maxCalculation_wait <= 1'b0;
+			clockCycleReset <= 1'b0;
+			doneResettingForDrawing <= 1'b0;
+			donePositionSet <= 1'b0;
+			firstPixel <= 1'b0;
+
+			position_x <= 8'b0;
+			position_y <= 6'b0;
 		end
 		else begin
 			if(load_firstLayer)begin //if loading first state
@@ -626,9 +737,10 @@ module dataPath(
 				increment <= 1'b0;
 				increment_address <= 1'b0;
 				maxCalculation_wait <= 1'b0;
+				clockCycleReset <= 1'b0;
 			end
 			else if(load_result)begin //determine the max
-				if(layerOutput_result_address == 4'd10)begin
+				if(layerOutput_result_address == 4'd11)begin
 					if(maxAddress == 4'd1)begin
 						resultingNumber <= 10'b0000000001;
 					end
@@ -661,14 +773,54 @@ module dataPath(
 					end
 					done_Selecting = 1'b1;
 				end
-				else begin
+				else if(clockCycleReset)begin
 					if(resultRAM_OUTPUT_output >= currentMaxVal)begin
 						currentMaxVal <= resultRAM_OUTPUT_output;
 						maxAddress <= layerOutput_result_address;
 					end
 					layerOutput_result_address <= layerOutput_result_address + 1;
 				end
-				
+				else begin
+					clockCycleReset <= 1'b1;
+				end
+			end
+			else if(load_drawing)begin
+				//counter to loop through the x and y coordinates
+				//read the imageRAM and set the color 
+				if(donePositionSet)begin
+					drawPulse <= 1'b1;
+					donePositionSet <= 1'b0;
+					if(position_x == 7'd27 && position_y == 6'd27)begin
+						done_Drawing <= 1'b1;
+					end
+				end
+				else if(doneResettingForDrawing)begin
+					drawPulse <= 1'b0;
+					if(firstPixel)begin
+						firstPixel <= 1'b0;
+					end
+					else begin
+						if(position_x == 7'd27)begin
+							position_x <= 7'b0;
+							position_y <= position_y + 1;
+						end
+						else begin
+							position_x <= position_x + 1;
+						end
+						imageRAM_address <= imageRAM_address + 1;
+					end
+					donePositionSet <= 1'b1;
+				end
+				else begin
+					
+					//reset the image address
+					position_x <= 7'b0;
+					position_y <= 6'b0;
+					imageRAM_address <= 0;
+					doneResettingForDrawing <= 1'b1;
+					firstPixel <= 1'b1;
+				end
+
 			end
 		end
 	end
@@ -686,7 +838,7 @@ module imgRAM_readOnly(inputData,outputData,address,writeEnable,clock);
 	input writeEnable, clock;
 	output reg [14:-17] outputData;
 
-	reg [14:-17] IMG_ram [1024:0];
+	reg [14:-17] IMG_ram [783:0];
 		//0 should be the first bit
 		//1 is first pixel in the img
 		//784 is the last pixel
@@ -715,7 +867,7 @@ module weightRAM_layer1(inputData,outputData,address,writeEnable,clock);
 	input writeEnable, clock;
 	output reg [14:-17] outputData;
 
-	reg [14:-17] layer1_ram [65536:0];
+	reg [14:-17] layer1_ram [50175:0];
 		//0 should be the first bit
 		//1 is first pixel in the img
 		//784 is the last pixel
@@ -767,7 +919,7 @@ module weightRAM_layer2(inputData,outputData,address,writeEnable,clock);
 	input writeEnable, clock;
 	output reg [14:-17] outputData;
 
-	reg [14:-17] layer2_ram [2048:0];
+	reg [14:-17] layer2_ram [2047:0];
 		//0 should be the first bit
 		//1 is first pixel in the img
 		//784 is the last pixel
@@ -817,7 +969,7 @@ module weightRAM_outputLayer(inputData,outputData,address,writeEnable,clock);
 	input writeEnable, clock;
 	output reg [14:-17] outputData;
 
-	reg [14:-17] output_ram [512:0];
+	reg [14:-17] output_ram [319:0];
 		//0 should be the first bit
 		//1 is first pixel in the img
 		//784 is the last pixel

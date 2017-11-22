@@ -9,35 +9,35 @@ z2
 cModel Technology
 Z0 dC:/Users/Johnny Zou/Desktop/2nd Year/Verilog/Final Project
 vcontrol
-Z1 !s110 1511228645
+Z1 !s110 1511314753
 !i10b 1
-!s100 HD6SEFEFzO<>Db]6G]V>E1
-IfZfdO2923O]>dLfS@DbAf0
+!s100 OXTL5d2h?GB@Y0_CJ_65S3
+I1e9>7ib:BgbHZZg3R`YFd0
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-Z3 w1511221754
+Z3 w1511314750
 Z4 8finalProject.v
 Z5 FfinalProject.v
-L0 184
+L0 250
 Z6 OV;L;10.4d;61
 r1
 !s85 0
 31
-Z7 !s108 1511228645.000000
+Z7 !s108 1511314753.000000
 Z8 !s107 finalProject.v|
 Z9 !s90 -reportprogress|300|finalProject.v|
 !i113 1
 vdataPath
 R1
 !i10b 1
-!s100 Qo_7idgIKUlTXR?ASdoEH2
-IMdT2CcDPA8`RTb<^0@Z?90
+!s100 ^PjN7TWb=Hk=<2jnC<Da:1
+II=NbTQQaMNjYYiWf>nU@L0
 R2
 R0
 R3
 R4
 R5
-L0 310
+L0 388
 R6
 r1
 !s85 0
@@ -50,8 +50,8 @@ ndata@path
 vfinalProject
 R1
 !i10b 1
-!s100 8<iL^NabH7hMOJWzG1DUg2
-InN5V0L67Vl]5n20ZZoCjS3
+!s100 z:ad]G4jW;QL?;I5Z0a121
+IKj<H[96U9kUkA?KWi=NSZ1
 R2
 R0
 R3
@@ -70,14 +70,14 @@ nfinal@project
 vimgRAM_readOnly
 R1
 !i10b 1
-!s100 aQ4bllQjaER<Za_[TA4<j1
-IdSl[FGCRGa51l_no^SD^J1
+!s100 CS3nPj<<nQLbEeDKg4ddF2
+I<oU]2W`Bi3C9zJaRfmi0P3
 R2
 R0
 R3
 R4
 R5
-L0 680
+L0 832
 R6
 r1
 !s85 0
@@ -90,14 +90,14 @@ nimg@r@a@m_read@only
 vresultRAM_layer1
 R1
 !i10b 1
-!s100 Tf`_JUJTMkYV8k4AfJW=L0
-IZAknRg;[o2=?z8FhmXFAK1
+!s100 0Qg49?02BIkG?<XX4=?2V2
+I;hKMdLNMWz9CDX`A4IYkB1
 R2
 R0
 R3
 R4
 R5
-L0 737
+L0 889
 R6
 r1
 !s85 0
@@ -110,14 +110,14 @@ nresult@r@a@m_layer1
 vresultRAM_layer2
 R1
 !i10b 1
-!s100 VzgTAAM`::5f9nhP]8S320
-IjUnTL:Hi@RNZ[aKk0kQh]1
+!s100 fGm3H`XII;L0?hS5NWTG_2
+IAIhPjVIc>QOi5S2<?QJCJ0
 R2
 R0
 R3
 R4
 R5
-L0 788
+L0 940
 R6
 r1
 !s85 0
@@ -130,14 +130,14 @@ nresult@r@a@m_layer2
 vresultRAM_outputLayer
 R1
 !i10b 1
-!s100 <dZKPf=j@345e13FXTN0D3
-IbXTSfWP:ePW8Te>L<dL2B1
+!s100 dm1OZ>D<5c=KI>LWQz`gW2
+I<FhGAV[B<9cej;EdX5jcN2
 R2
 R0
 R3
 R4
 R5
-L0 837
+L0 989
 R6
 r1
 !s85 0
@@ -150,14 +150,14 @@ nresult@r@a@m_output@layer
 vweightRAM_layer1
 R1
 !i10b 1
-!s100 N3G?5560h[0l7G37kFN6l2
-IaGm3d8ohX^c@iKjh1M:QI3
+!s100 N2l`zXe7^GYcKAoToN5JC3
+In3Q9[E26BGZ6[eROgAO1?3
 R2
 R0
 R3
 R4
 R5
-L0 707
+L0 859
 R6
 r1
 !s85 0
@@ -170,14 +170,14 @@ nweight@r@a@m_layer1
 vweightRAM_layer2
 R1
 !i10b 1
-!s100 PPmC_Zfhk37oG^dX]OHe80
-ILoJ;?]kA6Fch3UTE:a3PK3
+!s100 n868;NLiEic:6MlQke?=m0
+IYIk[h`2R6ZeE9SBA;0lN=1
 R2
 R0
 R3
 R4
 R5
-L0 760
+L0 912
 R6
 r1
 !s85 0
@@ -190,14 +190,14 @@ nweight@r@a@m_layer2
 vweightRAM_outputLayer
 R1
 !i10b 1
-!s100 d?[NNRFK8nemTjmTHO6dm3
-I5hn8=WoHB617ggFUzlE;71
+!s100 i3TH^D3PnATKS@HVIc[GB3
+IZSQ4zNgK3=[78omRjYE?V0
 R2
 R0
 R3
 R4
 R5
-L0 811
+L0 963
 R6
 r1
 !s85 0

@@ -1,0 +1,13 @@
+
+State Machine - |finalProject|control:C0|current_state
+Name current_state.draw_image current_state.display_mostLikely current_state.load_resetOutput current_state.load_outputRAM current_state.load_resetSecond current_state.load_secondResultRAM current_state.load_resetFirst current_state.load_firstResultRAM current_state.S_begin_wait current_state.S_begin 
+current_state.S_begin 0 0 0 0 0 0 0 0 0 0 
+current_state.S_begin_wait 0 0 0 0 0 0 0 0 1 1 
+current_state.load_firstResultRAM 0 0 0 0 0 0 0 1 0 1 
+current_state.load_resetFirst 0 0 0 0 0 0 1 0 0 1 
+current_state.load_secondResultRAM 0 0 0 0 0 1 0 0 0 1 
+current_state.load_resetSecond 0 0 0 0 1 0 0 0 0 1 
+current_state.load_outputRAM 0 0 0 1 0 0 0 0 0 1 
+current_state.load_resetOutput 0 0 1 0 0 0 0 0 0 1 
+current_state.display_mostLikely 0 1 0 0 0 0 0 0 0 1 
+current_state.draw_image 1 0 0 0 0 0 0 0 0 1 

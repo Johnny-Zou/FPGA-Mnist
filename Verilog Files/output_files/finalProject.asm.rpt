@@ -1,5 +1,5 @@
 Assembler report for finalProject
-Sat Nov 11 20:47:49 2017
+Tue Nov 21 20:53:55 2017
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -38,7 +38,7 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sat Nov 11 20:47:49 2017 ;
+; Assembler Status      ; Successful - Tue Nov 21 20:53:55 2017 ;
 ; Revision Name         ; finalProject                          ;
 ; Top-level Entity Name ; finalProject                          ;
 ; Family                ; Cyclone V                             ;
@@ -68,8 +68,8 @@ agreement for further details.
 ; Option         ; Setting                                                                                           ;
 +----------------+---------------------------------------------------------------------------------------------------+
 ; Device         ; 5CSEMA5F31C6                                                                                      ;
-; JTAG usercode  ; 0x00B3CB97                                                                                        ;
-; Checksum       ; 0x00B3CB97                                                                                        ;
+; JTAG usercode  ; 0x047F304E                                                                                        ;
+; Checksum       ; 0x047F304E                                                                                        ;
 +----------------+---------------------------------------------------------------------------------------------------+
 
 
@@ -79,13 +79,13 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Sat Nov 11 20:47:42 2017
+    Info: Processing started: Tue Nov 21 20:53:45 2017
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off finalProject -c finalProject
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 913 megabytes
-    Info: Processing ended: Sat Nov 11 20:47:49 2017
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Peak virtual memory: 952 megabytes
+    Info: Processing ended: Tue Nov 21 20:53:55 2017
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:10
 
 
