@@ -1,5 +1,5 @@
 Assembler report for finalProject
-Tue Nov 21 20:53:55 2017
+Wed Nov 29 02:23:45 2017
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -10,7 +10,7 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/Johnny Zou/Desktop/2nd Year/Verilog/Final Project/output_files/finalProject.sof
+  5. Assembler Device Options: C:/Users/Johnny Zou/Desktop/2nd Year/Verilog/Final Project - Camera integration/output_files/finalProject.sof
   6. Assembler Messages
 
 
@@ -38,7 +38,7 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Nov 21 20:53:55 2017 ;
+; Assembler Status      ; Successful - Wed Nov 29 02:23:45 2017 ;
 ; Revision Name         ; finalProject                          ;
 ; Top-level Entity Name ; finalProject                          ;
 ; Family                ; Cyclone V                             ;
@@ -53,24 +53,24 @@ agreement for further details.
 +--------+---------+---------------+
 
 
-+------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                ;
-+------------------------------------------------------------------------------------------+
-; File Name                                                                                ;
-+------------------------------------------------------------------------------------------+
-; C:/Users/Johnny Zou/Desktop/2nd Year/Verilog/Final Project/output_files/finalProject.sof ;
-+------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                                     ;
++---------------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                     ;
++---------------------------------------------------------------------------------------------------------------+
+; C:/Users/Johnny Zou/Desktop/2nd Year/Verilog/Final Project - Camera integration/output_files/finalProject.sof ;
++---------------------------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/Johnny Zou/Desktop/2nd Year/Verilog/Final Project/output_files/finalProject.sof ;
-+----------------+---------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                           ;
-+----------------+---------------------------------------------------------------------------------------------------+
-; Device         ; 5CSEMA5F31C6                                                                                      ;
-; JTAG usercode  ; 0x047F304E                                                                                        ;
-; Checksum       ; 0x047F304E                                                                                        ;
-+----------------+---------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Johnny Zou/Desktop/2nd Year/Verilog/Final Project - Camera integration/output_files/finalProject.sof ;
++----------------+------------------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                                ;
++----------------+------------------------------------------------------------------------------------------------------------------------+
+; Device         ; 5CSEMA5F31C6                                                                                                           ;
+; JTAG usercode  ; 0x04AB5C5E                                                                                                             ;
+; Checksum       ; 0x04AB5C5E                                                                                                             ;
++----------------+------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -79,13 +79,13 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Tue Nov 21 20:53:45 2017
+    Info: Processing started: Wed Nov 29 02:23:32 2017
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off finalProject -c finalProject
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 952 megabytes
-    Info: Processing ended: Tue Nov 21 20:53:55 2017
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:10
+    Info: Peak virtual memory: 988 megabytes
+    Info: Processing ended: Wed Nov 29 02:23:45 2017
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:11
 
 

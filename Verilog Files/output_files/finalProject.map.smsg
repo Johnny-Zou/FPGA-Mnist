@@ -1,1 +1,3 @@
-Warning (10268): Verilog HDL information at finalProject.v(508): always construct contains both blocking and non-blocking assignments File: C:/Users/Johnny Zou/Desktop/2nd Year/Verilog/Final Project/finalProject.v Line: 508
+Warning (10268): Verilog HDL information at finalProject.v(129): always construct contains both blocking and non-blocking assignments File: C:/Users/Johnny Zou/Desktop/2nd Year/Verilog/Final Project - Camera integration/finalProject.v Line: 129
+Info (10281): Verilog HDL Declaration information at finalProject.v(36): object "HEX0" differs only in case from object "hex0" in the same scope File: C:/Users/Johnny Zou/Desktop/2nd Year/Verilog/Final Project - Camera integration/finalProject.v Line: 36
+Warning (10268): Verilog HDL information at finalProject.v(781): always construct contains both blocking and non-blocking assignments File: C:/Users/Johnny Zou/Desktop/2nd Year/Verilog/Final Project - Camera integration/finalProject.v Line: 781

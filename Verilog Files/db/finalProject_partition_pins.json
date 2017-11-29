@@ -152,6 +152,46 @@
 					"strict" : false
 				},
 				{
+					"name" : "TD_RESET_N",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[6]",
+					"strict" : false
+				},
+				{
+					"name" : "FPGA_I2C_SCLK",
+					"strict" : false
+				},
+				{
+					"name" : "FPGA_I2C_SDAT",
+					"strict" : false
+				},
+				{
 					"name" : "KEY[0]",
 					"strict" : false
 				},
@@ -160,7 +200,87 @@
 					"strict" : false
 				},
 				{
-					"name" : "KEY[1]",
+					"name" : "KEY[2]",
+					"strict" : false
+				},
+				{
+					"name" : "TD_CLK27",
+					"strict" : false
+				},
+				{
+					"name" : "SW[8]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[7]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[3]",
+					"strict" : false
+				},
+				{
+					"name" : "TD_VS",
+					"strict" : false
+				},
+				{
+					"name" : "TD_HS",
+					"strict" : false
+				},
+				{
+					"name" : "TD_DATA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "TD_DATA[6]",
+					"strict" : false
+				},
+				{
+					"name" : "TD_DATA[7]",
+					"strict" : false
+				},
+				{
+					"name" : "TD_DATA[4]",
+					"strict" : false
+				},
+				{
+					"name" : "TD_DATA[5]",
+					"strict" : false
+				},
+				{
+					"name" : "TD_DATA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "TD_DATA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "TD_DATA[3]",
 					"strict" : false
 				}
 			]
